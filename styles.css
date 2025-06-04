@@ -1,0 +1,485 @@
+/* || GENERAL STYLES – All common styling to be generally applied */
+
+*{
+    box-sizing: border-box;/*To get consistent sizing on page*/
+}
+
+html{
+    height: 100%;
+    margin:0;
+}
+
+body{
+    background-color:#C2E1C2;
+    margin:0;/*To close gap to left of nav*/
+    font-family: "playfair display", sans-serif;/*Applies font from stylesheet*/
+    height: 100%;
+    margin:0
+}
+
+/* || TYPOGRAPHY */
+
+h2{
+    font-size: 24px;
+}
+
+p{
+    margin-left:20px;
+} 
+
+/* || LAYOUT UTILITIES – Define utility classes to remove default styling */
+
+.main{ /*To push content down below the nav bar*/
+    padding-top: 8vh;
+}
+
+.about{ /*To push content down below the nav bar*/
+    padding-top: 8vh;
+}
+
+.title{ /*To give main content on page space*/
+    padding-left: 7px;
+    padding-right: 7px;
+    color: #5f4e44;
+}
+
+.intro{ /*To give main content on page space*/
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.favourites{ /*To give main content on page space*/
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.sub-form { /*To give main content on page space*/
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.soon{
+    padding-top: 10vh;
+    text-align: center;
+    color: #5f4e44;
+}
+
+.main-wrapper{/*Sections off main content to allow footer to sit at bottom of page*/
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* COMPONENTS - GALLERY - */ 
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+.gallery img{
+    width: 100%;
+    max-width: 350px;
+    height: 425px;
+    object-fit: cover;
+}
+
+.tpc-gallery{ /*Pushes header below nav bar so it is visible*/
+    text-align: center;
+    font-size: 24px;
+    color: #5f4e44;
+    margin-top:8vh;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
+.gallerytext {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  
+  min-width: 350px;
+  max-width: 350px;
+  max-height: 425px;
+  width: 100%;
+  background: #000000;
+  text-align: center;
+}
+
+/*.gallerytext * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}*/
+
+.gallerytext img {
+  opacity: 1;
+  width: 100%;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+.gallerytext figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+.gallerytext figcaption > div {
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  width: 50%;
+  position: relative;
+}
+.gallerytext figcaption::before {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  width: 2px;
+  content: '';
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+.gallerytext h2,
+.gallerytext p {
+  margin: 0;
+  margin-top:10vh;
+  padding: 20px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
+  transition: opacity 0.45s,-webkit-transform 0.45s,-moz-transform 0.45s,-o-transform 0.45s,transform 0.45s;
+}
+.gallerytext h2 {
+  text-align: right;
+  display: inline-block;
+  word-spacing: -0.1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transform: translate3d(50%, 0%, 0);
+  transform: translate3d(50%, 0%, 0);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.gallerytext p {
+  display: block;
+  bottom: 0;
+  text-align: left;
+  font-weight: 300;
+  top: 0%;
+  color: #000;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-transform: translate3d(-50%, 0%, 0);
+  transform: translate3d(-50%, 0%, 0);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.gallerytext a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  color: #ffffff;
+}
+.gallerytext:hover img {
+  opacity: 0.7;
+}
+.gallerytext:hover figcaption h2,
+.gallerytext:hover figcaption p {
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.gallerytext:hover figcaption h2 {
+  opacity: 1;
+}
+.gallerytext:hover figcaption p {
+  opacity: 1;
+}
+.gallerytext:hover figcaption::before {
+  background: #ffffff;
+  top: 0px;
+  bottom: 0px;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+
+
+
+
+
+/* COMPONENTS - COOKIES */ 
+
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483645;
+  box-sizing: border-box;
+  width: 100%;
+
+  background-color: #F1F6F4;
+}
+
+.cookie-consent-banner__inner {     
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.cookie-consent-banner__copy { 
+  margin-bottom: 16px;
+}
+
+/*.cookie-consent-banner__actions {    
+}*/
+
+.cookie-consent-banner__header {
+  margin-bottom: 8px;
+  
+  font-family: "CeraPRO-Bold", sans-serif, arial;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cookie-consent-banner__description {
+  font-family: "CeraPRO-Regular", sans-serif, arial;
+  font-weight: normal;
+  color: #838F93;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cookie-consent-banner__cta {
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 164px;
+  padding: 11px 13px;
+    
+  border-radius: 2px;
+  
+  background-color: #2CE080;
+   
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  font-family: "CeraPRO-Regular", sans-serif, arial;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.cookie-consent-banner__cta--secondary { 
+  padding: 9px 13px;
+  
+  border: 2px solid #3A4649;
+  
+  background-color: transparent;
+  
+  color: #2CE080;
+}
+
+.cookie-consent-banner__cta:hover {
+  background-color: #20BA68;
+}
+
+.cookie-consent-banner__cta--secondary:hover {
+  border-color: #838F93;
+    
+  background-color: transparent;
+  
+  color: #22C870;
+}
+
+.cookie-consent-banner__cta:last-child {
+  margin-left: 16px;
+}
+
+#hide-cookie-banner:checked ~ #cookie-banner {
+  display: none;
+}
+
+/* COMPONENTS - FORMS */ 
+
+fieldset{
+    border: none;
+}
+
+.thanks{ 
+    margin-left: 20px;
+}
+
+/* COMPONENTS - BANNER */
+
+.banner {
+    height: 400px;
+    width: 100%;
+    background-image: url('Images/20240910_191020.jpg');
+    background-size: cover;
+    background-position: center 43%;
+    background-repeat: no-repeat;
+}
+
+/* SITEWIDE  - NAVIGATION*/
+
+nav{
+    position:fixed;/*Ensures nav stays at top of page while scrolling*/
+    top:0;
+    width:100%;/*To fit width of page*/
+    height:8vh;/*To set height of nav bar*/
+    background-image:linear-gradient(#FCBFB7, #C2E1C2);
+    font-weight:bold;
+    font-size:24px;
+    font-family: "playfair display", sans-serif;/*Applies font from stylesheet*/
+    display:flex;
+    align-items: center;
+    justify-content:space-between; /*Pushes nav to right*/
+    padding: 0 20px; /*Creates space to the right for balance*/
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.navul{/*Applies styling to nav bar list elements*/
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+li{
+    margin:2px;/*Spacing for nav list elements*/
+    padding:5px;/*Spacing for nav list elements*/
+    display:inline;/*Displays nav elements in a row*/
+    align-items: center;
+    border: 2px solid #5f4e44;/*Sets borders for nav elements*/
+    border-radius:20%;/*Softens border edges for nav elements*/
+}
+
+/* NAVIGATION LINK STATES*/
+
+a:link, .terms-and-conditions{
+    color:#5f4e44; /*Changes text color of nav link unvisited*/
+    text-decoration: none; /*Removes underline from nav elements*/
+}
+
+a:visited, .terms-and-conditions{
+color:#004F2D;/*Changes text color of nav link visited*/
+text-decoration: none; /*Removes underline from nav elements*/
+}
+
+a:hover, .terms-and-conditions{
+color:#80AB82;/*Changes text color of nav link in hover state*/
+text-decoration: none; /*Removes underline from nav elements*/
+}
+
+a:active, .terms-and-conditions{
+color:#FCBFB7;/*Changes text color of nav link when clicked*/
+text-decoration: none; /*Removes underline from nav elements*/
+}
+
+/* SITEWIDE  - FOOTER*/
+footer{
+    padding:5px;
+    position: relative;
+    bottom: 0;/*Footer stays at bottom of page*/
+}
+
+
+
+@media (max-width: 768px) {
+    /* Navigation Bar Adjustments */
+    nav {
+        flex-direction: column; /* Stack logo and nav links vertically */
+        height: auto; /* Allow height to adjust based on content */
+        padding: 10px 0; /* Adjust padding for stacked layout */
+        font-size: 18px; /* Slightly smaller font for nav on mobile */
+    }
+
+    .navul {
+        flex-direction: column; /* Stack individual nav items vertically */
+        width: 100%; /* Make ul take full width */
+        gap: 5px; /* Reduce gap between stacked items */
+    }
+
+    li {
+        width: 80%; /* Make list items take up more width, but not 100% */
+        margin: 5px auto; /* Center list items and add vertical margin */
+        padding: 8px 0; /* Adjust padding for stacked items */
+        text-align: center; /* Ensure text is centered within each box */
+        display: flex; /* Make li a flex container */
+        justify-content: center; /* Center content (text) within li */
+        align-items: center; /* Vertically center content (text) within li */
+        border-radius: 10px; /* Less aggressive rounding for more consistent look */
+    }
+
+    a {
+        padding: 0; /* Remove padding from anchor now that li has it */
+        width: 100%; /* Make anchor fill the li */
+        height: 100%; /* Make anchor fill the li */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* General Content Adjustments */
+    .banner {
+        height: 250px; /* Make banner image shorter on mobile */
+        background-position: center center; /* Adjust background position */
+    }
+
+    .main, .about {
+        padding-top: 10px; /* Reduce top padding for main content if nav is smaller */
+    }
+
+    .title, .intro, .favourites, .sub-form {
+        padding-left: 15px; /* Increase horizontal padding for content readability */
+        padding-right: 15px;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-size: 20px; /* Adjust heading sizes for mobile */
+        text-align: center; /* Center headings for better mobile display */
+        margin: 15px 0; /* Adjust margin for headings */
+    }
+
+    p {
+        margin: 0 15px; /* Adjust paragraph margins */
+        text-align: justify; /* Justify text for better readability on mobile */
+    }
+
+    .soon {
+        padding-top: 5vh; /* Adjust as needed for "Coming Soon" page */
+    }
+
+    .gallery img {
+        max-width: 100%; /* Ensure gallery images don't overflow */
+        height: auto; /* Adjust height automatically */
+    }
+}
